@@ -10,7 +10,9 @@ const motorcycleMongooseSchema = new Schema<IMotorcycle>({
   buyValue: Number,
   category: String,
   engineCapacity: Number,
-}, { versionKey: false });
+}, {
+  versionKey: false,
+});
 
 class MotorcycleModel extends MongoModel<IMotorcycle> {
   constructor(model = mongooseCreateModel('Motorcycles', motorcycleMongooseSchema)) {
