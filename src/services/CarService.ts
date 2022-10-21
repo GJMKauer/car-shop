@@ -24,15 +24,15 @@ class CarService implements IService<ICar> {
     return this._car.read();
   }
 
-  // public async readOne(id: string): Promise<ICar | null> {
-  //   const car = await this._car.readOne(id);
+  public async readOne(id: string): Promise<ICar> {
+    const car = await this._car.readOne(id);
 
-  //   if (!car) throw new Error(ErrorTypes.EntityNotFound);
+    if (!car) throw new Error(ErrorTypes.EntityNotFound);
 
-  //   return car;
-  // }
+    return car;
+  }
 
-  // public async update(id: string, obj: unknown): Promise<ICar | null> {
+  // public async update(id: string, obj: unknown): Promise<ICar> {
   //   const parsedObj = carZodSchema.safeParse(obj);
 
   //   if (!parsedObj.success) {
@@ -46,7 +46,7 @@ class CarService implements IService<ICar> {
   //   return updatedCar;
   // }
 
-  // public async delete(id: string): Promise<ICar | null> {
+  // public async delete(id: string): Promise<ICar> {
   //   const deletedCar = await this._car.delete(id);
 
   //   if (!deletedCar) throw new Error(ErrorTypes.EntityNotFound);
