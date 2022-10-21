@@ -4,7 +4,8 @@ import { Request, Response } from 'express';
 import CarController from '../../../controllers/CarController';
 import CarService from '../../../services/CarService';
 import CarModel from '../../../models/CarModel';
-import { carMock, carMockUpdated, carMockUpdatedWithId, carMockWithId } from '../../mocks/carMocks';
+import { carMock, carMockUpdated, carMockWithId } from '../../mocks/carMocks';
+
 describe('Car Controller', () => {
   const carModel = new CarModel();
   const carService = new CarService(carModel);
