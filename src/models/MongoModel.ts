@@ -13,9 +13,9 @@ abstract class MongoModel<T> implements IModel<T> {
     return this._model.create({ ...obj });
   }
 
-  // public async read(): Promise<T[]> {
-  //   return this._model.find();
-  // }
+  public async read(): Promise<T[]> {
+    return this._model.find();
+  }
 
   // public async readOne(id: string): Promise<T | null> {
   //   if (!isValidObjectId(id)) throw Error(ErrorTypes.InvalidMongoId);
