@@ -32,19 +32,19 @@ class CarService implements IService<ICar> {
     return car;
   }
 
-  // public async update(id: string, obj: unknown): Promise<ICar> {
-  //   const parsedObj = carZodSchema.safeParse(obj);
+  public async update(id: string, obj: unknown): Promise<ICar> {
+    const parsedObj = carZodSchema.safeParse(obj);
 
-  //   if (!parsedObj.success) {
-  //     throw parsedObj.error;
-  //   }
+    if (!parsedObj.success) {
+      throw parsedObj.error;
+    }
 
-  //   const updatedCar = await this._car.update(id, parsedObj.data);
+    const updatedCar = await this._car.update(id, parsedObj.data);
 
-  //   if (!updatedCar) throw new Error(ErrorTypes.EntityNotFound);
+    if (!updatedCar) throw new Error(ErrorTypes.EntityNotFound);
 
-  //   return updatedCar;
-  // }
+    return updatedCar;
+  }
 
   // public async delete(id: string): Promise<ICar> {
   //   const deletedCar = await this._car.delete(id);

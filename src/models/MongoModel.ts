@@ -22,10 +22,10 @@ abstract class MongoModel<T> implements IModel<T> {
     return this._model.findOne({ id });
   }
 
-  // public async update(id: string, obj: Partial<T>): Promise<T | null> {
-  //   if (!isValidObjectId(id)) throw Error(ErrorTypes.InvalidMongoId);
-  //   return this._model.findByIdAndUpdate({ id, obj });
-  // }
+  public async update(id: string, obj: Partial<T>): Promise<T | null> {
+    if (!isValidObjectId(id)) throw Error(ErrorTypes.InvalidMongoId);
+    return this._model.findByIdAndUpdate(id, obj, { new: true });
+  }
 
   // public async delete(id: string): Promise<T | null> {
   //   if (!isValidObjectId(id)) throw Error(ErrorTypes.InvalidMongoId);
