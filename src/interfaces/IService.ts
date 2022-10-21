@@ -3,5 +3,5 @@ export interface IService<T> {
   read(): Promise<T[]>
   readOne(id: string): Promise<T>
   update(id: string, obj: unknown): Promise<T>
-  // delete(id: string): Promise<T>
+  delete(id: string): Promise<T>
 }
