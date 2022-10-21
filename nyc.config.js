@@ -12,5 +12,4 @@ module.exports = {
     "html",
     "lcov"
   ],
-  all: true,
 }
