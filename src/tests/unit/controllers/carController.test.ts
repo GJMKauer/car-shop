@@ -88,4 +88,21 @@ describe('Car Controller', () => {
       expect(jsonStub.calledWith(carMockWithId)).to.be.true;
     });
   });
+
+  describe('When deleting a car', () => {
+    beforeEach(() => {
+      sinon.stub(carService, 'delete').resolves(carMockWithId);
+    });
+
+    it('Delete a car succesfully', async () => {
+      req.params = { id: carMockWithId.id };
+      await carController.delete(req, res);
+
+      const statusStub = res.status as sinon.SinonStub;
+      expect(statusStub.calledWith(204)).to.be.true;
+
+      const jsonStub = res.json as sinon.SinonStub;
+      expect(jsonStub.calledWith()).to.be.true;
+    });
+  });
 });

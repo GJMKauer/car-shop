@@ -32,7 +32,7 @@ class CarController {
     const { id } = req.params;
 
     await this._service.delete(id);
-    return res.status(204).send();
+    return res.status(204).json();
   }
 }
 

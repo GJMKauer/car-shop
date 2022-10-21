@@ -13,6 +13,7 @@ describe('Car Model', () => {
     sinon.stub(mongoose.Model, 'find').resolves([carMockWithId]);
     sinon.stub(mongoose.Model, 'findOne').resolves(carMockWithId);
     sinon.stub(mongoose.Model, 'findByIdAndUpdate').resolves(carMockUpdatedWithId);
+    sinon.stub(mongoose.Model, 'findByIdAndDelete').resolves(carMockUpdatedWithId);
   });
 
   afterEach(() => {
@@ -67,5 +68,20 @@ describe('Car Model', () => {
         expect(err.message).to.be.equal(ErrorTypes.InvalidMongoId);
       }
     });
-  })
+  });
+
+  describe('When deleting a car', () => {
+    it('Return the deleted car successfully', async () => {
+      const deletedCar = await carModel.delete('6352f8ea74092b2e6a784c51');
+      expect(deletedCar).to.be.deep.equal(carMockUpdatedWithId);
+    });
+
+    it('Fails to return a car when id is not found', async () => {
+      try {
+        await carModel.delete('KurozumiOrochi');
+      } catch (err: any) {
+        expect(err.message).to.be.equal(ErrorTypes.InvalidMongoId);
+      }
+    });
+  });
 });
