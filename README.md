@@ -193,7 +193,7 @@ dentro da pasta raíz do projeto, fora do terminal do Docker. Após a execução
 
 | Método | Funcionalidade | URL |
 |---|---|---|
-| `PUT` | Atualizar um carro atravéz do id | http://localhost:3001/cars/:id
+| `PUT` | Atualizar um carro através do id | http://localhost:3001/cars/:id
 
 <details>
   <summary> A resposta da requisição é a seguinte, com status 200:</summary>
