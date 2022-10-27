@@ -13,7 +13,7 @@ Neste projeto, fui capaz de:
 - Utilizar o banco de dados não relacional MongoDB;
 - Utilizar o ODM Mongoose para trabalhar com o banco de dados MongoDB;
 - Exercitar a utilização de POO;
-- Construir uma API CRUD utilizando dos preceitos de bom desenvolvimento com SOLID.
+- Construir uma API CRUD utilizando dos preceitos de bom desenvolvimento com SOLID;
 - Construção de testes unitários com a utilização de **Mocha**, **Chai** e **Sinon**.
    
 ---
@@ -239,7 +239,7 @@ A rota retorna o status 204, <code>sem resposta</code>.
 </details>
 <br>
 
-### 🛵 Motorcyle
+### 🛵 Motorcycles
 
 | Método | Funcionalidade                         | URL                               |
 | ------ | -------------------------------------- | --------------------------------- |
